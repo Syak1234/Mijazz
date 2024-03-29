@@ -40,8 +40,6 @@ class _MusicUploadState extends State<MusicUpload> {
           return const Center(child: CircularProgressIndicator());
         });
     try {
-      print(fileaudio.toString());
-
       var request = http.MultipartRequest(
           "POST", Uri.parse('${UrlPage.link}musicupload.php'));
       request.files.add(
