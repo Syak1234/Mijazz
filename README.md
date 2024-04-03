@@ -1,7 +1,5 @@
 # Music_Pluse
-
-A new Flutter project.
-<img src="https://nextbigtechnology.com/wp-content/cache/wpspeed/images/5415a46972e2e37161498bbf884d4b2e805cb5bc.webp">
+<img src="https://nextbigtechnology.com/wp-content/cache/wpspeed/images/5415a46972e2e37161498bbf884d4b2e805cb5bc.webp"><br>
 
 ## Getting Started
 
