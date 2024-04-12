@@ -1,19 +1,14 @@
 import 'dart:async';
-import 'dart:convert';
+
 import 'dart:ui';
-import 'package:Music_Pluse/projectfile/backgroundmusic.dart';
-import 'package:Music_Pluse/projectfile/util/details.dart';
+
 import 'package:animated_background/animated_background.dart';
-import 'package:http/http.dart' as http;
+
 import 'package:Music_Pluse/projectfile/Navigatorbar.dart';
 
-import 'package:Music_Pluse/projectfile/util/song.dart';
-import 'package:Music_Pluse/projectfile/util/webUrl.dart';
- 
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+
 import 'package:just_audio/just_audio.dart';
-import 'package:just_audio_background/just_audio_background.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 
