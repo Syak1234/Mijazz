@@ -12,7 +12,7 @@ Future<void> main(List<String> args) async {
     androidNotificationChannelName: 'Audio playback',
     androidNotificationOngoing: true,
   );
-
+  print('object');
   runApp(
     const GetMaterialApp(
       home: Splash(),
