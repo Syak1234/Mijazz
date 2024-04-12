@@ -1,8 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
-
 import 'package:Music_Pluse/projectfile/Navigatorbar.dart';
-
 import 'package:Music_Pluse/projectfile/signup.dart';
 import 'package:Music_Pluse/projectfile/util/details.dart';
 import 'package:Music_Pluse/projectfile/util/webUrl.dart';
@@ -12,17 +10,12 @@ import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:just_audio/just_audio.dart';
-
 import 'package:shared_preferences/shared_preferences.dart';
-
-// import 'package:vibration/vibration.dart';
-
 import 'artistnameupload.dart';
 import 'forgotpassword.dart';
 import 'internetmusic.dart';
 import 'loader.dart';
 import 'package:Music_Pluse/projectfile/gobalclass.dart' as global;
-
 import 'musicupload.dart';
 // import 'package:flutter/src/widgets/framework.dart';
 
@@ -52,6 +45,7 @@ class _LoginState extends State<Login> {
       // print(data);
       // ignore: use_build_context_synchronously
       showDialog(
+          // ignore: use_build_context_synchronously
           context: context,
           barrierDismissible: false,
           builder: (context) {
@@ -60,7 +54,7 @@ class _LoginState extends State<Login> {
 
       try {
         var response = await http.post(
-          Uri.parse(UrlPage.link + "student_login.php"),
+          Uri.parse("${UrlPage.link}student_login.php"),
           body: data,
         );
 
@@ -79,6 +73,7 @@ class _LoginState extends State<Login> {
         } else {
           // ignore: use_build_context_synchronously
           showDialog(
+              // ignore: use_build_context_synchronously
               context: context,
               barrierDismissible: false,
               builder: (context) {
@@ -116,7 +111,7 @@ class _LoginState extends State<Login> {
     Map data = {"email": email};
     try {
       var response = await http.post(
-        Uri.parse(UrlPage.link + "getdetails.php"),
+        Uri.parse("${UrlPage.link}getdetails.php"),
         body: data,
       );
       var jsondata = jsonDecode(response.body);
@@ -130,11 +125,13 @@ class _LoginState extends State<Login> {
         sp.setString('image', details.image);
         sp.setString('user', details.user);
 
+        // ignore: use_build_context_synchronously
         Navigator.of(context).pop();
         player = AudioPlayer();
 
         // ignore: use_build_context_syncwhronously
         Navigator.pushReplacement(
+            // ignore: use_build_context_synchronously
             context,
             MaterialPageRoute(
                 builder: (context) =>
@@ -175,12 +172,12 @@ class _LoginState extends State<Login> {
                             context: context,
                             builder: (context) {
                               return AlertDialog(
-                                title: Text('Enter id'),
+                                title: const Text('Enter id'),
                                 content: Form(
                                   key: gk,
                                   child: TextFormField(
                                     keyboardType: TextInputType.number,
-                                    decoration: InputDecoration(
+                                    decoration: const InputDecoration(
                                         border: OutlineInputBorder(
                                             borderSide: BorderSide(
                                                 color: Colors.black, width: 3)),
@@ -229,11 +226,11 @@ class _LoginState extends State<Login> {
                             });
                       },
                       child: Container(
-                        padding:
-                            EdgeInsets.only(top: 20, bottom: 20, right: 10),
+                        padding: const EdgeInsets.only(
+                            top: 20, bottom: 20, right: 10),
                         width: MediaQuery.of(context).size.width,
                         alignment: Alignment.centerRight,
-                        child: Text(
+                        child: const Text(
                           'Admin',
                           style: TextStyle(
                               color: Colors.white,
